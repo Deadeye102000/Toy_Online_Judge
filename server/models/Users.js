@@ -1,27 +1,21 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    firstName: {
-        type : String,
-        required: true
+    firstname: {
+        type: String,
+        default: null,
     },
-    lastName: {
-        type : String,
-        required: true  
-
+    lastname: {
+        type: String,
+        default: null,
     },
     email: {
-        type : String,
-        required: true,
-        unique: true
+        type: String,
+        unique: true,
     },
     password: {
-        type : String,
-        required: true
-    }
+        type: String,
+    },
 });
 
-module.exports = mongoose.model('User',userSchema);
-// This code defines a Mongoose schema for a User model in a MongoDB database.
-
-// Always ensure to export it as singular as MongoDb automatically makes it plural
+module.exports = mongoose.model("user", userSchema);
